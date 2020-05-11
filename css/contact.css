@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  background: var(--purple);
+  height: calc(100vh - 350px);
+}
+
+.contact_form {
+  font-size: 2rem;
+  margin: 50px 0;
+  line-height: 70px;
+}
+
+table {
+  text-align: left;
+  margin: auto;
+}
+
+td {
+  font-size: 1.3rem;
+}
+
+.tick::after,
+.cross::after {
+  background-size: 20px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  content:"";
+}
+
+.tick::after {
+  background-image: url('/img/tick.png');
+}
+
+.cross::after {
+  background-image: url('/img/wrong.png');
+}
+
+#send {
+  font-size: 2rem;
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+
+}
+
+@media (min-width: 768px) {
+  main {
+    /* display: flex;
+    justify-content: center;
+    background: var(--purple); */
+    height: calc(100vh - 178px);
+  }
+
+  .contact_form {
+    /* font-size: 2rem;
+    margin: 50px 0;
+    line-height: 70px; */
+  }
+
+  table {
+    /* text-align: left;
+    margin: auto; */
+  }
+
+  td {
+    /* font-size: 1.3rem; */
+  }
+
+  .tick::after,
+  .cross::after {
+    /* background-size: 20px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    content:""; */
+  }
+
+  .tick::after {
+    /* background-image: url('/img/tick.png'); */
+  }
+
+  .cross::after {
+    /* background-image: url('/img/wrong.png'); */
+  }
+
+  #send {
+    /* font-size: 2rem;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0; */
+  }
+}
+
+
+@media (min-width: 1024px) {
+  main {
+    /* display: flex;
+    justify-content: center;
+    background: var(--purple); */
+    height: calc(100vh - 300px);
+  }
+
+  .contact_form {
+    /* font-size: 2rem;
+    margin: 50px 0;
+    line-height: 70px; */
+  }
+
+  table {
+    /* text-align: left;
+    margin: auto; */
+  }
+
+  td {
+    /* font-size: 1.3rem; */
+  }
+
+  .tick::after,
+  .cross::after {
+    /* background-size: 20px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    content:""; */
+  }
+
+  .tick::after {
+    /* background-image: url('/img/tick.png'); */
+  }
+
+  .cross::after {
+    /* background-image: url('/img/wrong.png'); */
+  }
+
+  #send {
+    /* font-size: 2rem;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0; */
+  }
+}

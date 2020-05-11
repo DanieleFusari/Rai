@@ -1,0 +1,253 @@
+main {
+  position: relative;
+}
+
+.header {
+  text-align: center;
+}
+
+.burger_menu {
+  width: 8%;
+  padding: 1px;
+  opacity: 2;
+  transition: 1s;
+  position: absolute;
+}
+
+/******************** Side bar  *******************/
+/******************** Side bar  *******************/
+/******************** Side bar  *******************/
+.side_bar {
+  box-shadow: 2px 2px 10px var(--purple);
+  opacity: 0;
+  transition: 2s;
+  background: var(--purple);
+  font-size: 1.8rem;
+  position: absolute;
+}
+
+.close_side_bar {
+  float: right;
+  border: 1px solid #000;
+  padding: 2px;
+  margin: 1px;
+  box-shadow: 1px 1px;
+}
+
+.close_side_bar:active,
+ .tick_box_form [type='submit']:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.tick_box_form {
+  text-align: left;
+
+}
+.tick_box_form tr {
+  height: 30px;
+}
+
+.tick_box_form [type='checkbox'] {
+  width: 20px;
+  height: 20px;
+}
+
+.tick_box_form [type='submit'] {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px;
+}
+
+
+/******************** main *******************/
+/******************** main *******************/
+/******************** main *******************/
+
+.all_cards {
+  width: 90%;
+  margin: auto;
+}
+
+.card {
+  border: solid 3px var(--purple);
+  margin: 10px 0;
+}
+
+.card_img {
+  width: 90%;
+  height: 249px;
+  padding: 10px 0;
+  display: block;
+  margin: auto;
+}
+
+.card_code {
+  text-align: center;
+}
+
+/******************** main  page change links *******************/
+/******************** main  page change links *******************/
+/******************** main  page change links *******************/
+
+.pages {
+  text-align: right;
+  margin: 20px;
+  font-size: 1.2rem;
+}
+
+.off_page,
+.on_page {
+  border-bottom: solid 1px var(--purple);
+  color: var(--purple);
+  font-size: .8rem;
+  padding: 5px;
+}
+
+.off_page {
+  color: var(--dark_purple);
+  font-size: 1.5rem;
+}
+
+/* ************************ Screen 768px  ************************ */
+/* ************************ Screen 768px  ************************ */
+/* ************************ Screen 768px  ************************ */
+
+@media (min-width:768px) {
+  main {
+    position: relative;
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  .burger_menu {
+    width: 8%;
+    padding: 1px;
+    opacity: 2;
+    transition: 1s;
+    position: absolute;
+    left: 10px;
+  }
+
+  .side_bar {
+    box-shadow: 2px 2px 10px var(--purple);
+    opacity: 0;
+    transition: 2s;
+    background: var(--purple);
+    font-size: 1.8rem;
+    position: absolute;
+  }
+
+  .close_side_bar {
+    float: right;
+    border: 1px solid #000;
+    padding: 2px;
+    margin: 1px;
+    box-shadow: 1px 1px;
+  }
+
+  .close_side_bar:active,
+  .tick_box_form [type='submit']:active {
+    transform: translateY(2px);
+    box-shadow: none;
+  }
+
+  .tick_box_form {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tick_box_form th {
+    padding: 5px 18px 5px 0;
+  }
+
+  .tick_box_form tr {
+    height: 60px;
+  }
+
+  .tick_box_form [type='checkbox'] {
+    width: 20px;
+    height: 20px;
+  }
+
+  .tick_box_form [type='submit'] {
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .all_cards {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    border: solid 3px var(--purple);
+    margin: 10px 0;
+    flex-grow: 1;
+    flex-basis: 300px;
+    max-width: 370px;
+  }
+
+  .card_img {
+    width: 90%;
+    padding: 10px 0;
+    display: block;
+    margin: auto;
+  }
+
+  .pages {
+    text-align: right;
+    margin: 20px;
+  }
+
+  .pages {
+    text-align: right;
+    margin: 20px;
+    font-size: 1.2rem;
+  }
+
+  .off_page,
+  .on_page {
+    border-bottom: solid 1px var(--purple);
+    color: var(--purple);
+    font-size: 1.2rem;
+    padding: 5px;
+  }
+
+  .off_page {
+    color: var(--dark_purple);
+  }
+}
+
+/* ************************ Screen 1024px  ************************ */
+/* ************************ Screen 1024px  ************************ */
+/* ************************ Screen 1024px  ************************ */
+
+@media (min-width:1024px) {
+  .burger_menu {
+    width: 5%;
+    padding: 1px;
+    opacity: 2;
+    transition: 1s;
+    position: absolute;
+    left: 13px;
+  }
+
+  .side_bar {
+    box-shadow: 2px 2px 10px var(--purple);
+    opacity: 0;
+    transition: 2s;
+    background: var(--purple);
+    font-size: 1.5rem;
+    position: absolute;
+  }
+}
