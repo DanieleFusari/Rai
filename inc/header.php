@@ -23,7 +23,7 @@
       </a>
       <nav>
         <ul class="nav_tabs">
-          <li  tabindex="2" class="categorie_tab li">Categories
+          <li  tabindex="2" class="categorie_tab li"><span class="bg">Categories</span>
             <ul class="dropdown">
               <?php
               $categories = categories();
@@ -32,9 +32,9 @@
               <?php } ?>
             </ul>
           </li>
-          <li class="li" tabindex="3"><a href="code.php">Enter Code</a></li>
-          <li class="li" tabindex="4"><a href="favourites.php">Favourites</a></li>
-          <li class="li" tabindex="5"><a href="contact.php">Contact</a></li>
+          <li class="li" tabindex="3"><a href="code.php"><span class="bg">Enter Code</span></a></li>
+          <li class="li" tabindex="4"><a href="favourites.php"><span class="bg">Favourites</span></a></li>
+          <li class="li" tabindex="5"><a href="contact.php"><span class="bg">Contact</span></a></li>
         </ul>
       </nav>
     </header>

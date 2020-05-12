@@ -4,10 +4,15 @@ $js = '/js/contact.js';
 include 'controllers/functions.php';
 $title = "Contact Rai";
 include 'inc/header.php';
+$mail_ok = filter_input(INPUT_GET, 'mail', FILTER_SANITIZE_STRING)
 ?>
-
+<?php if ($mail_ok == 'ok'){ ?>
+  <p class="ok email_message">Mail sent. Thank you</p>
+<?php } else { ?>
+  <p class="failed email_message">Mail Failed . Try again</p>
+<?php } ?>
 <main>
-  <form class="contact_form" action="index.html" method="post">
+  <form class="contact_form" action="/controllers/swift.php" method="post">
     <table>
       <tr>
         <th> <label for="name">Name:</label></th>

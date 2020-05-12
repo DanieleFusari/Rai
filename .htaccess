@@ -1,11 +1,22 @@
 Options -Indexes
 
-<FilesMatch "\.(db)$">
+<FilesMatch ".(db)$">
 Order allow,deny
 Deny from all
 </FilesMatch>
 
-RedirectMatch 403 ^/controller/?$
+<files .env>
+Order Allow,Deny
+Deny from all
+</files>
+
+<files functions.php>
+Order Allow,Deny
+Deny from all
+</files>
+
+RedirectMatch 403 ^/controllers/?$
+
 
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d

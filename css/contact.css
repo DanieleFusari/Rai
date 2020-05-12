@@ -2,6 +2,20 @@
   box-sizing: border-box;
 }
 
+.email_message {
+  color: var(--purple);
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.ok {
+  background: green;
+}
+.failed {
+  background: red;
+}
+
 main {
   display: flex;
   justify-content: center;
