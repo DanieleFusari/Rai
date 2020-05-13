@@ -7,14 +7,12 @@ try {
   echo $e->getMessage();
 }
 
-
 function categories() {
   global $db;
   $results = $db->query('SELECT * FROM categories');
   $results = $results->fetchAll(PDO::FETCH_ASSOC);
   return $results;
 }
-
 
 function amount_categories() {
   global $db;

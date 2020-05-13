@@ -20,7 +20,7 @@ main {
   display: flex;
   justify-content: center;
   background: var(--purple);
-  height: calc(100vh - 350px);
+  min-height: calc(100vh - 350px);
 }
 
 .contact_form {
@@ -69,7 +69,7 @@ td {
     /* display: flex;
     justify-content: center;
     background: var(--purple); */
-    height: calc(100vh - 178px);
+    min-height: calc(100vh - 178px);
   }
 
   .contact_form {
@@ -119,7 +119,8 @@ td {
     /* display: flex;
     justify-content: center;
     background: var(--purple); */
-    height: calc(100vh - 300px);
+    margin-top: 8px;
+    min-height: calc(100vh - 325px);
   }
 
   .contact_form {

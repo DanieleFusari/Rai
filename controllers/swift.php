@@ -13,7 +13,7 @@ $filter = [
 
 $email_details = filter_input_array(INPUT_POST, $filter);
 
-$message = 'Phone Number ' . $email_details['phone'] . "</br>" . 'Message: ' . $email_details['information'];
+$message = 'Phone Number ' . $email_details['phone'] . '</br>' . 'Message: ' . $email_details['information'];
 
 
 // Create the Transport
@@ -25,11 +25,11 @@ $transport = (new Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
 $mailer = new Swift_Mailer($transport);
 
 // Create a message
-$message = (new Swift_Message("Raistudios Question From" . $email_details['name']))
+$message = (new Swift_Message("Question From " . $email_details['name']))
+  ->setContentType("text/html")
   ->setFrom(getenv('email'))
   ->setTo([getenv('email') => $email_details['name']])
-  ->setBcc([getenv('emaildd') => $email_details['name']])
-  ->setBcc([getenv('emailrr') => $email_details['name']])
+  ->setBcc([getenv('emaildd'), getenv('emailrr')])
   ->setReplyTo($email_details['email'], $email_details['name'])
   ->setBody($message);
 

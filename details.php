@@ -7,7 +7,6 @@ include 'controllers/functions.php';
 $title = "Code $code";
 include 'inc/header.php';
 $card_details = getcard($code);
-// var_dump($card_details);
 session_start();
 
 if(isset($_SESSION['fav'])){
@@ -53,7 +52,7 @@ if (!$card_details) {
         } elseif ($card_details['item_is'] == '0') {
           $card_details = array_replace($card_details, ['item' => 'Sold']);
         }
-
+        unset($card_details['item_is']);
         foreach ($card_details as $key => $value): ?>
           <tr>
             <th><?= ucwords($key);?></th>

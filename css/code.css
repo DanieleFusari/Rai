@@ -3,7 +3,7 @@
 }
 
 main {
-  height: calc(100vh - 368px);
+  min-height: calc(100vh - 368px);
   border: 1px var(--dark_purple) solid;
 
 }
@@ -35,7 +35,7 @@ table {
 
 @media (min-width: 768px) {
   main {
-    height: calc(100vh - 192px);
+    min-height: calc(100vh - 192px);
     border: 1px var(--dark_purple) solid;
 
   }
@@ -43,7 +43,7 @@ table {
 
 @media (min-width: 1025px) {
   main {
-    height: calc(100vh - 316px);
+    min-height: calc(100vh - 316px);
     border: 1px var(--dark_purple) solid;
 
   }
