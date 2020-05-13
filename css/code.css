@@ -3,7 +3,7 @@
 }
 
 main {
-  height: calc(100vh - 350px);
+  height: calc(100vh - 368px);
   border: 1px var(--dark_purple) solid;
 
 }
@@ -31,4 +31,20 @@ table {
 }
 
 .input {
+}
+
+@media (min-width: 768px) {
+  main {
+    height: calc(100vh - 192px);
+    border: 1px var(--dark_purple) solid;
+
+  }
+}
+
+@media (min-width: 1025px) {
+  main {
+    height: calc(100vh - 316px);
+    border: 1px var(--dark_purple) solid;
+
+  }
 }

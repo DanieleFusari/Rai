@@ -28,6 +28,8 @@ $mailer = new Swift_Mailer($transport);
 $message = (new Swift_Message("Raistudios Question From" . $email_details['name']))
   ->setFrom(getenv('email'))
   ->setTo([getenv('email') => $email_details['name']])
+  ->setBcc([getenv('emaildd') => $email_details['name']])
+  ->setBcc([getenv('emailrr') => $email_details['name']])
   ->setReplyTo($email_details['email'], $email_details['name'])
   ->setBody($message);
 

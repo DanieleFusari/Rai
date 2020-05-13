@@ -233,6 +233,10 @@ main {
 /* ************************ Screen 1024px  ************************ */
 
 @media (min-width:1024px) {
+  main {
+    min-height: calc(100vh - 356px);
+  }
+
   .burger_menu {
     width: 5%;
     padding: 1px;
@@ -250,4 +254,9 @@ main {
     font-size: 1.5rem;
     position: absolute;
   }
+}
+
+
+.clear_all {
+  margin-left: 90vw;
 }

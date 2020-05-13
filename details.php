@@ -8,6 +8,16 @@ $title = "Code $code";
 include 'inc/header.php';
 $card_details = getcard($code);
 // var_dump($card_details);
+session_start();
+
+if(isset($_SESSION['fav'])){
+  $_SESSION['fav'] .= $code . ', ';
+} else {
+  $_SESSION['fav'] = $code. ', ';
+}
+
+
+
 
 if (empty($code)) {
   header("Location: /");

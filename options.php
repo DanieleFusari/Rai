@@ -32,7 +32,7 @@ if ($categorie_name == Null) {
 
 $title = "Categorie $categorie_name";
 include 'inc/header.php';
-$limit = 12;
+
 
 if ($sub_categorie_selected) {
     $cards = code_sub_cat_search_word($categorie, $off, $sub_categorie_selected);
@@ -77,7 +77,7 @@ $sub_categorie = sort_subcats($categorie);
     </form>
   </aside>
 
-  
+
   <div class="all_cards">
     <?php foreach ($cards as $value): ?>
       <div class="card">

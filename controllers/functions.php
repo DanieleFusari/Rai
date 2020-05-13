@@ -36,6 +36,8 @@ function amount_categories() {
   return $results;
 }
 
+$limit = 12;
+
 function pages() {
   global $limit;
   global $categorie;
@@ -144,4 +146,14 @@ function getcard($card_code){
   $results->execute();
   $results = $results->fetch(PDO::FETCH_ASSOC);
   return $results;
+}
+
+
+ // favourites function
+function fav_list($sql){
+  global $db;
+  $results = $db->query($sql);
+  $results = $results->fetchAll(PDO::FETCH_ASSOC);
+  return $results;
+
 }
