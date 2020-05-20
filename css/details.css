@@ -7,13 +7,16 @@ main {
 }
 
 #images {
-  /* width: 50%; */
+  width: 100%;
 }
 
 .big_img {
-  width: 100%;
-  padding: 20px;
-  padding-bottom: 5px;
+  width: 80%;
+  margin: 100px 10%;
+  margin-bottom: 5px;
+  border-radius: 10%;
+  max-height: 600px;
+
 }
 
 .card_small_img_border {
@@ -24,6 +27,8 @@ main {
 
 .small_img {
   width: 20%;
+  max-height: 150px;
+
 }
 
 /****** right box with details *******/
@@ -37,7 +42,7 @@ main {
   font-size: 1.5rem;
 }
 
-#details tr td{
+.details_td {
   padding-left: 100px;
 }
 
@@ -55,9 +60,9 @@ main {
   }
 
   .big_img {
-    width: 100%;
-    padding: 50px;
-    padding-bottom: 5px;
+    width: 90%;
+    margin-bottom: 15px;
+    max-height: 600px;
   }
 
   .card_small_img_border {
@@ -68,6 +73,7 @@ main {
   }
 
   .small_img {
+    max-height: 150px;
   }
 
   /****** right box with details *******/
@@ -77,13 +83,22 @@ main {
   }
 
   #details table {
-    text-align: left;
-    margin: 10% ;
-    font-size: 1.5rem;
+    margin: 25% 0 0 8%;
+    font-size: 1.3rem;
+    box-shadow: 20px 20px 20px var(--purple);
+    width: 80%;
+    border-spacing: 0;
   }
 
-  #details tr td{
-    padding-left: 100px;
+  .details_th{
+    width: 40%;
+  }
+
+  .details_th,
+  .details_td {
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    text-align: left;
   }
 
 }  /* end media 1024px */

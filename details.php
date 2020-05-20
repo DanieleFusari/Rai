@@ -16,8 +16,6 @@ if(isset($_SESSION['fav'])){
 }
 
 
-
-
 if (empty($code)) {
   header("Location: /");
 }
@@ -47,22 +45,21 @@ if (!$card_details) {
         unset($card_details['sub_categorie']);
         unset($card_details['categorie_code']);
         unset($card_details['imgs']);
-        if ($card_details['item_is'] == '1') {
+        if ($card_details['item'] == '1') {
           $card_details = array_replace($card_details, ['item' => 'Available']);
-        } elseif ($card_details['item_is'] == '0') {
+        } elseif ($card_details['item'] == '0') {
           $card_details = array_replace($card_details, ['item' => 'Sold']);
         }
-        unset($card_details['item_is']);
         foreach ($card_details as $key => $value): ?>
           <tr>
-            <th><?= ucwords($key);?></th>
-            <td><?php if($key === 'cost') echo '£'; echo $value;
-                      if($key === 'height' || $key === 'lenght') echo 'cm'; elseif ($key === 'weight') echo 'g'?></td>
+            <th class="details_th"><?= ucwords($key);?></th>
+            <td class="details_td"><?php if($key === 'cost') echo '£' . number_format($value,2); else echo $value;
+                      if($key === 'height' || $key === 'width') echo 'cm'; elseif ($key === 'weight') echo 'g'?></td>
           </tr>
         <?php endforeach; ?>
         <tr>
-          <th>More Information</th>
-          <td><a href="/contact.php">contact details</a> </td>
+          <th class="details_th">More Information</th>
+          <td class="details_td"><a href="/contact.php">contact details</a> </td>
         </tr>
       </table>
     </div>
