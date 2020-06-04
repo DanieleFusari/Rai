@@ -25,11 +25,11 @@ if (isset($_SESSION['fav'])) {
 ?>
 <main>
   <?php if (isset($_SESSION['fav']) && !empty($fav_list)){ ?>
-    <a class="clear_all" href="controllers/favourites.php">Clear All</a>
+    <a class="clear_all" href="controllers/favourites">Clear All</a>
     <div class="all_cards">
       <?php foreach ($fav_list as $value): ?>
         <div class="card">
-          <a href="details.php?code=<?=$value['code']?>"><img class="card_img" src="/card_img/<?=$value['code']?>.jpg" alt=""></a>
+          <a href="details?code=<?=$value['code']?>"><img class="card_img" src="/card_img/<?=$value['code']?>.jpg" alt=""></a>
           <p class="card_code"><?=$value['code']?></p>
         </div>
       <?php endforeach; ?>

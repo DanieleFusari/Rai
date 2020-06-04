@@ -11,11 +11,11 @@ include 'inc/header.php';
         $categories = categories();
         $num = 0;
         foreach ($categories as $value) { ?>
-          <li><a tabindex="<?=$num;?>" href="options.php?cat=<?=$value['categorie_code'];?>&p=1" > <?= $value['categorie_name'] ?></a></li>
+          <li><a tabindex="<?=$num;?>" href="options?cat=<?=$value['categorie_code'];?>&p=1" > <?= $value['categorie_name'] ?></a></li>
         <?php $num++;} ?>
-        <li><a href="code.php">Find Code</a></li>
-        <li><a href="favourites.php">Favourites</a></li>
-        <li><a href="contact.php">Contact</a></li>
+        <li><a href="code">Find Code</a></li>
+        <li><a href="favourites">Favourites</a></li>
+        <li><a href="contact">Contact</a></li>
       </ul>
     </main>
 

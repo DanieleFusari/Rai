@@ -1,7 +1,16 @@
 <?php
 
+require_once __DIR__ . '/../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+
+$host = getenv('host');
+$dbname = getenv('dbname');
+$username = getenv('username');
+$password = getenv('dbpassword');
+
 try {
-  $db = new PDO('sqlite:' . __DIR__ . '/database.db');
+  $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (\Exception $e) {
   echo $e->getMessage();
@@ -53,7 +62,7 @@ function pages() {
       foreach ($sub_categorie_selected as $value) {
          $all_cats .= '&' . "t_" . $value .'=' . $value;
       };
-      echo '<span class="off_page"><a href="options.php?cat=' . $categorie . $all_cats . '&' . 'off=' .  ($i -1) * $limit . '&' . 'p=' .  $i . '">' . $i . ', </a></span>';
+      echo '<span class="off_page"><a href="options?cat=' . $categorie . $all_cats . '&' . 'off=' .  ($i -1) * $limit . '&' . 'p=' .  $i . '">' . $i . ', </a></span>';
     }
   }
 }
@@ -70,10 +79,11 @@ function categorie_name($cat) {
 function code_sub_cat($cat, $offset) {
   global $db;
   global $limit;
-  $results = $db->prepare("SELECT code, sub_categorie FROM cards WHERE cards.categorie_code = :cat LIMIT :lim OFFSET :off");
-  $results->bindParam(":cat", $cat);
-  $results->bindParam(":lim", $limit);
-  $results->bindParam(":off", $offset);
+  $sql = "SELECT code, sub_categorie FROM cards WHERE categorie_code = :cat LIMIT :off, :lim";
+  $results = $db->prepare($sql);
+  $results->bindParam(':cat', $cat, PDO::PARAM_STR);
+  $results->bindParam(':lim', $limit, PDO::PARAM_INT);
+  $results->bindParam(':off', $offset, PDO::PARAM_INT);
   $results->execute();
   $results = $results->fetchAll(PDO::FETCH_ASSOC);
   return $results;
@@ -83,7 +93,7 @@ function total_code_sub_cat($cat) {
   global $db;
   global $limit;
   $results = $db->prepare("SELECT count(*) AS amount FROM cards WHERE cards.categorie_code = :cat");
-  $results->bindParam(":cat", $cat);
+  $results->bindParam(":cat", $cat, PDO::PARAM_STR);
   $results->execute();
   $results = $results->fetch(PDO::FETCH_ASSOC);
   return $results;
@@ -118,9 +128,9 @@ function code_sub_cat_search_word($cat, $offset, $search_words) {
   global $db;
   global $limit;
   $results = $db->prepare($sql);
-  $results->bindParam(":cat", $cat);
-  $results->bindParam(":lim", $limit);
-  $results->bindParam(":off", $offset);
+  $results->bindParam(":cat", $cat, PDO::PARAM_STR);
+  $results->bindParam(":lim", $limit, PDO::PARAM_INT);
+  $results->bindParam(":off", $offset, PDO::PARAM_INT);
   $results->execute();
   $results = $results->fetchAll(PDO::FETCH_ASSOC);
   return $results;
@@ -129,7 +139,7 @@ function code_sub_cat_search_word($cat, $offset, $search_words) {
 function categorie($cat) {
   global $db;
   $results = $db->prepare("SELECT * FROM cards JOIN categories ON cards.categorie_code = categories.categorie_code WHERE cards.categorie_code = :cat");
-  $results->bindParam(":cat", $cat);
+  $results->bindParam(":cat", $cat, PDO::PARAM_STR);
   $results->execute();
   $results = $results->fetchAll(PDO::FETCH_ASSOC);
   return $results;

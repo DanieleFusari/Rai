@@ -1,4 +1,9 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('html_errors', 1);
+
+
 $categorie = filter_input(INPUT_GET, 'cat', FILTER_SANITIZE_STRING);
 $off = filter_input(INPUT_GET, 'off', FILTER_SANITIZE_NUMBER_INT);
 $p = filter_input(INPUT_GET, 'p', FILTER_SANITIZE_NUMBER_INT);
@@ -33,7 +38,6 @@ if ($categorie_name == Null) {
 $title = "Categorie $categorie_name";
 include 'inc/header.php';
 
-
 if ($sub_categorie_selected) {
     $cards = code_sub_cat_search_word($categorie, $off, $sub_categorie_selected);
     $items = amount_categories();
@@ -42,7 +46,6 @@ if ($sub_categorie_selected) {
     $sub_categorie_selected = [];
     $items = total_code_sub_cat($categorie, $off);
 }
-
 $sub_categorie = sort_subcats($categorie);
 
 ?>
@@ -81,7 +84,7 @@ $sub_categorie = sort_subcats($categorie);
   <div class="all_cards">
     <?php foreach ($cards as $value): ?>
       <div class="card">
-        <a href="details.php?code=<?=$value['code']?>"><img class="card_img" src="/card_img/<?=$value['code']?>.jpg" alt=""></a>
+        <a href="details?code=<?=$value['code']?>"><img class="card_img" src="/card_img/<?=$value['code']?>.jpg" alt=""></a>
         <p class="card_code"><?=$value['code']?></p>
       </div>
     <?php endforeach; ?>
@@ -92,6 +95,5 @@ $sub_categorie = sort_subcats($categorie);
     <?php pages();?>
   </div>
 </main>
-
 
 <?php include 'inc/footer.php'; ?>

@@ -21,7 +21,7 @@ if (empty($code)) {
 }
 
 if (!$card_details) {
-  header("Location: /code.php?find=true&code=$code");
+  header("Location: /code?find=true&code=$code");
 } else {
 ?>
   <main>
@@ -59,7 +59,7 @@ if (!$card_details) {
         <?php endforeach; ?>
         <tr>
           <th class="details_th">More Information</th>
-          <td class="details_td"><a href="/contact.php">contact details</a> </td>
+          <td class="details_td"><a href="/contact?c=<?=$code?>">contact details</a> </td>
         </tr>
       </table>
     </div>

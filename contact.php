@@ -5,6 +5,7 @@ include 'controllers/functions.php';
 $title = "Contact Rai";
 include 'inc/header.php';
 $mail_ok = filter_input(INPUT_GET, 'mail', FILTER_SANITIZE_STRING);
+$code = filter_input(INPUT_GET, 'c', FILTER_SANITIZE_STRING);
 require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -23,6 +24,10 @@ $dotenv->load();
       <tr>
         <th> <label for="name">Name:</label></th>
         <td><input id='name' type="text" name="name" placeholder="Enter first name."> </td>
+      </tr>
+      <tr>
+        <th> <label for="code">Code:</label></th>
+        <td><input id='code' type="text" name="code" placeholder="Enter code here." value="<?=$code ?>"> </td>
       </tr>
       <tr>
         <th> <label for="phone">Phone:</label></th>
